@@ -1,0 +1,151 @@
+/*reset css*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+/*add font*/
+@font-face {
+	font-family: 'Raleway';
+	src: local('../fonts/Raleway-Regular'),
+		url('../fonts/Raleway-Regular.woff2') format('woff2'),
+		url('../fonts/Raleway-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Raleway';
+	src: local('../fonts/Raleway-Black'),
+		url('../fonts/Raleway-Black.woff2') format('woff2'),
+		url('../fonts/Raleway-Black.woff') format('woff'),;
+	font-weight: 900;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Raleway';
+	src: local('../fonts/Raleway-Bold'),
+		url('../fonts/Raleway-Bold.woff2') format('woff2'),
+		url('../fonts/Raleway-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Raleway';
+	src: local('../fonts/Raleway-BlackItalic'),
+		url('../fonts/Raleway-BlackItalic.woff2') format('woff2'),
+		url('../fonts/Raleway-BlackItalic.woff') format('woff');
+	font-weight: 900;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Raleway';
+	src: local('../fonts/Raleway-Light'),
+		url('../fonts/Raleway-Light.woff2') format('woff2'),
+		url('../fonts/Raleway-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Raleway';
+	src: local('../fonts/Raleway-Italic'),
+		url('../fonts/Raleway-Italic.woff2') format('woff2'),
+		url('../fonts/Raleway-Italic.woff') format('woff');
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face {
+	font-family: 'Raleway';
+	src: local('../fonts/Raleway-Thin'),
+		url('../fonts/Raleway-Thin.woff2') format('woff2'),
+		url('../fonts/Raleway-Thin.woff') format('woff');
+	font-weight: 100;
+	font-style: normal;
+}
+/*clearfix*/
+.clearfix:before, .clearfix:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+/*main css*/
+body {
+  font-family: 'Raleway', Arial, sans-serif;
+}
+section {
+  width: 100%;
+}
+header {
+  background-color: black;
+  height: 40px;
+}
+.container {
+  width: 1170px;
+  margin: 0 auto;
+}
+h1 {
+  float: left;
+}
+nav > ul {
+  font-weight: 600;
+}
+h1, nav > ul {
+  color: white;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 40px;
+}
+header span {
+  color: #09be94;
+  font-weight: bold;
+}
+.main-menu > li{
+  float: right;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.main-menu > li:first-of-type {
+  margin-right: 0;
+}
+.hover-menu > li:first-of-type::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-color: black;
+  position: absolute;
+  top: -5px;
+  left: 40px;
+  transform: rotate(45deg);
+  z-index: 1; /*ogarnąć dlaczego z-index tu nie działa*/
+}
+.hover-menu {
+  /*display: none; */ /*zmienić później na hover - uwaga bo główny element menu odjeżdża kiedy menu-hover się pojawia - dodać zmiejszenie marginesu?*/
+  font-weight: 500;
+  background-color: black;
+  margin-top: 20px;
+  margin-right: 220px;
+  padding: 5px 25px 5px 15px;
+  position: relative;
+  float: right;
+  color: white;
+  line-height: 30px;
+  font-size: 16px;
+  z-index: 2;
+}
+#carrousel {
+  background-color: lightgrey; /*add gradient here*/
+  height: 500px;
+}
+#content {
+  height: 350px;
+}
+#price-list {
+  background-color: lightgrey;
+  height: 700px;
+}
+#contact {
+  height: 450px;
+}
+footer {
+  height: 60px;
+}
