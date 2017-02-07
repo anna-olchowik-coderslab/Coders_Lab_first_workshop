@@ -83,19 +83,18 @@ header {
   width: 1170px;
   margin: 0 auto;
 }
-h1 {
+h2 {
   float: left;
+  width: 200px;
 }
-nav > ul {
-  font-weight: 600;
-}
-h1, nav > ul {
+h2, .main-menu {
   color: white;
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 40px;
+  letter-spacing: 2px;
 }
-header span {
+h2 > span, h1 > span {
   color: #09be94;
   font-weight: bold;
 }
@@ -103,38 +102,87 @@ header span {
   float: right;
   margin-left: 25px;
   margin-right: 25px;
+  font-weight: 600;
 }
 .main-menu > li:first-of-type {
   margin-right: 0;
 }
 .hover-menu > li:first-of-type::before {
   content: "";
-  width: 30px;
-  height: 30px;
-  background-color: black;
+  width: 20px;
+  height: 20px;
   position: absolute;
   top: -5px;
   left: 40px;
   transform: rotate(45deg);
-  z-index: 1; /*ogarnąć dlaczego z-index tu nie działa*/
+  border-top: 10px solid black;
+  border-left: 10px solid black;
 }
-.hover-menu {
-  /*display: none; */ /*zmienić później na hover - uwaga bo główny element menu odjeżdża kiedy menu-hover się pojawia - dodać zmiejszenie marginesu?*/
-  font-weight: 500;
+.hover-menu { /*słabo bo to zwiększa wysokość diva, i przez to kolejną sekcję mam zbyt oddaloną ku dołowi - co można z tym zrobić?*/
+  /*visibility: hidden;*/
   background-color: black;
-  margin-top: 20px;
-  margin-right: 220px;
+  margin-top: 15px;
+  margin-right: 200px;
   padding: 5px 25px 5px 15px;
   position: relative;
   float: right;
   color: white;
   line-height: 30px;
-  font-size: 16px;
-  z-index: 2;
+  font-size: 14px;
 }
 #carrousel {
   background-color: lightgrey; /*add gradient here*/
   height: 500px;
+}
+.arrow {
+  width: 60px;
+  margin-top: 90px;
+  font-size: 100px;
+  font-weight: 300;
+  color: #09be94;
+}
+.left-arrow {
+  float: left;
+}
+.right-arrow {
+  float: right;
+  text-align: right;
+}
+.black-chair {
+  width: auto;
+  height: 400px;
+  margin-top: 0;
+  float: left;
+}
+.main-text {
+  float: left;
+  width: 350px;
+  margin-top: 60px;
+  text-align: center;
+}
+h1 {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+.info-text {
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 25px;
+}
+.button {
+  border-radius: 10px;
+  background-color: #09be94;
+  text-transform: uppercase;
+  color: white;
+}
+.see-more-button {
+  width: 200px;
+  height: 40px;
+  font-size: 18px;
+  line-height: 40px;
+  margin: 0 auto;
 }
 #content {
   height: 350px;
