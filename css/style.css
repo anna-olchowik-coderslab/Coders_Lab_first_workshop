@@ -7,7 +7,8 @@
 }
 /*add font*/
 @font-face {
-	font-family: 'Raleway';
+	font-family: 'Raleway Regular'; /*jak to działa z używaniem różnych czcionek? mam dać im tu inne font-family czy co??*/
+  /*dlaczego mi to nie działa????*/
 	src: local('../fonts/Raleway-Regular'),
 		url('../fonts/Raleway-Regular.woff2') format('woff2'),
 		url('../fonts/Raleway-Regular.woff') format('woff');
@@ -15,15 +16,24 @@
 	font-style: normal;
 }
 @font-face {
-	font-family: 'Raleway';
+	font-family: 'Raleway Black';
 	src: local('../fonts/Raleway-Black'),
 		url('../fonts/Raleway-Black.woff2') format('woff2'),
-		url('../fonts/Raleway-Black.woff') format('woff'),;
+		url('../fonts/Raleway-Black.woff') format('woff');
 	font-weight: 900;
 	font-style: normal;
 }
 @font-face {
-	font-family: 'Raleway';
+	font-family: 'Raleway Extra Bold';
+	src: local('../fonts/Raleway-ExtraBold');
+	src:
+		url('../fonts/Raleway-ExtraBold.woff2') format('woff2'),
+		url('../fonts/Raleway-ExtraBold.woff') format('woff');
+	font-weight: 800;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Raleway Bold';
 	src: local('../fonts/Raleway-Bold'),
 		url('../fonts/Raleway-Bold.woff2') format('woff2'),
 		url('../fonts/Raleway-Bold.woff') format('woff');
@@ -31,7 +41,7 @@
 	font-style: normal;
 }
 @font-face {
-	font-family: 'Raleway';
+	font-family: 'Raleway BlackItalic';
 	src: local('../fonts/Raleway-BlackItalic'),
 		url('../fonts/Raleway-BlackItalic.woff2') format('woff2'),
 		url('../fonts/Raleway-BlackItalic.woff') format('woff');
@@ -39,7 +49,7 @@
 	font-style: italic;
 }
 @font-face {
-	font-family: 'Raleway';
+	font-family: 'Raleway Light';
 	src: local('../fonts/Raleway-Light'),
 		url('../fonts/Raleway-Light.woff2') format('woff2'),
 		url('../fonts/Raleway-Light.woff') format('woff');
@@ -47,7 +57,7 @@
 	font-style: normal;
 }
 @font-face {
-	font-family: 'Raleway';
+	font-family: 'Raleway Italic';
 	src: local('../fonts/Raleway-Italic'),
 		url('../fonts/Raleway-Italic.woff2') format('woff2'),
 		url('../fonts/Raleway-Italic.woff') format('woff');
@@ -55,7 +65,7 @@
 	font-style: italic;
 }
 @font-face {
-	font-family: 'Raleway';
+	font-family: 'Raleway Thin';
 	src: local('../fonts/Raleway-Thin'),
 		url('../fonts/Raleway-Thin.woff2') format('woff2'),
 		url('../fonts/Raleway-Thin.woff') format('woff');
@@ -70,7 +80,7 @@
 }
 /*main css*/
 body {
-  font-family: 'Raleway', Arial, sans-serif;
+  font-family: 'Raleway Regular', Arial, sans-serif;
 }
 section {
   width: 100%;
@@ -94,9 +104,10 @@ h2, .main-menu {
   line-height: 40px;
   letter-spacing: 2px;
 }
-h2 > span, h1 > span {
+h2 span {
   color: #09be94;
-  font-weight: bold;
+  font-family: 'Raleway Black', Arial, sans-serif;
+  font-size: 15px;
 }
 .main-menu > li{
   float: right;
@@ -118,7 +129,7 @@ h2 > span, h1 > span {
   border-top: 10px solid black;
   border-left: 10px solid black;
 }
-.hover-menu { /*słabo bo to zwiększa wysokość diva, i przez to kolejną sekcję mam zbyt oddaloną ku dołowi - co można z tym zrobić?*/
+.hover-menu { /*słabo bo to zwiększa wysokość diva, i przez to kolejną sekcję mam zbyt oddaloną ku dołowi - co można z tym zrobić? jak mi się uda to zmienić, to muszę zwiększyć black chair i napisy w tej sekcji, i zwiększyć marginesy od góry*/
   /*visibility: hidden;*/
   background-color: black;
   margin-top: 15px;
@@ -134,7 +145,7 @@ h2 > span, h1 > span {
   background-color: lightgrey; /*add gradient here*/
   height: 500px;
 }
-.arrow {
+.arrow { /*wrzucić ładniejsze strzałki*/
   width: 60px;
   margin-top: 90px;
   font-size: 100px;
@@ -162,9 +173,13 @@ h2 > span, h1 > span {
 }
 h1 {
   text-transform: uppercase;
-  font-weight: 500;
   font-size: 30px;
   margin-bottom: 25px;
+}
+h1 span {
+  color: #09be94;
+  font-family: 'Raleway Bold', Arial, sans-serif;
+  font-size: 32px;
 }
 .info-text {
   font-size: 12px;
@@ -185,7 +200,73 @@ h1 {
   margin: 0 auto;
 }
 #content {
-  height: 350px;
+  height: 400px;
+}
+.box-img { /*czym jest ten margines od góry i od dołu w zewnętrznym divie?? skąd on się bierze??*/
+  width: 360px;
+  height: 250px;
+  float: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 20px;
+}
+.box-img1 {
+  background-image: url(../images/box1_img.jpg);
+}
+.box-img2 {
+  background-image: url(../images/box2_img.jpg);
+  margin-left: 35px;
+  margin-right: 35px;
+}
+.white-belt {
+  width: 355px;
+  height: 80px;
+  margin-top: 150px;
+  float: right;
+  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.57);
+}
+.white-belt p {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  margin-left: 15px;
+}
+.white-belt span {
+  text-transform: uppercase;
+}
+.green-line {
+  width: 170px;
+  margin-left: 15px;
+}
+hr {
+  border: 4px solid #09be94;
+}
+.finds-all-inputs {
+  width: 380px;
+  height: 280px;
+  float: left;
+  margin-top: 20px;
+  border: 1px solid lightgrey; /*to chyba jednak jest shadow - poprawić*/
+}
+.finds-all-inputs p {
+  color: grey;
+  text-align: left;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 10px 25px 20px 25px;
+  font-weight: 600;
+}
+.finds-all-inputs p:first-child {
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 25px 25px 0 25px;
+}
+.finds-all-inputs .green-line {
+  margin-left: 25px;
 }
 #price-list {
   background-color: lightgrey;
