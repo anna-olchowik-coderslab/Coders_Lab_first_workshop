@@ -93,18 +93,18 @@ header {
   width: 1170px;
   margin: 0 auto;
 }
-h2 {
+.logo {
   float: left;
   width: 200px;
 }
-h2, .main-menu {
+.logo, .main-menu {
   color: white;
   text-transform: uppercase;
   font-size: 14px;
   line-height: 40px;
   letter-spacing: 2px;
 }
-h2 span {
+.logo span {
   color: #09be94;
   font-family: 'Raleway Black', Arial, sans-serif;
   font-size: 15px;
@@ -167,24 +167,24 @@ h2 span {
 }
 .main-text {
   float: left;
-  width: 350px;
+  width: 400px;
   margin-top: 60px;
   text-align: center;
 }
 h1 {
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 36px;
   margin-bottom: 25px;
 }
 h1 span {
   color: #09be94;
   font-family: 'Raleway Bold', Arial, sans-serif;
-  font-size: 32px;
+  font-size: 38px;
 }
 .info-text {
-  font-size: 12px;
-  line-height: 16px;
-  margin-bottom: 25px;
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 30px;
 }
 .button {
   border-radius: 10px;
@@ -193,17 +193,17 @@ h1 span {
   color: white;
 }
 .see-more-button {
-  width: 200px;
-  height: 40px;
-  font-size: 18px;
-  line-height: 40px;
+  width: 220px;
+  height: 50px;
+  font-size: 22px;
+  line-height: 50px;
   margin: 0 auto;
 }
 #content {
   height: 400px;
 }
 .box-img { /*czym jest ten margines od góry i od dołu w zewnętrznym divie?? skąd on się bierze??*/
-  width: 360px;
+  width: 365px;
   height: 250px;
   float: left;
   background-repeat: no-repeat;
@@ -215,8 +215,8 @@ h1 span {
 }
 .box-img2 {
   background-image: url(../images/box2_img.jpg);
-  margin-left: 35px;
-  margin-right: 35px;
+  margin-left: 36px;
+  margin-right: 36px;
 }
 .white-belt {
   width: 355px;
@@ -236,7 +236,7 @@ h1 span {
 .white-belt span {
   text-transform: uppercase;
 }
-.green-line {
+.green-line { /*tu chyba można skrócić kod - sprawdzić*/
   width: 170px;
   margin-left: 15px;
 }
@@ -244,11 +244,11 @@ hr {
   border: 4px solid #09be94;
 }
 .finds-all-inputs {
-  width: 380px;
+  width: 365px;
   height: 280px;
   float: left;
   margin-top: 20px;
-  border: 1px solid lightgrey; /*to chyba jednak jest shadow - poprawić*/
+  border: 2px solid #e0e0e0; /*to chyba jednak jest shadow - poprawić*/
 }
 .finds-all-inputs p {
   color: grey;
@@ -269,8 +269,155 @@ hr {
   margin-left: 25px;
 }
 #price-list {
-  background-color: lightgrey;
-  height: 700px;
+  background-color: #f2f2f2;
+  height: 800px;
+}
+#price-list h2 {
+  text-transform: uppercase;
+  font-size: 22px;
+  padding: 50px 0 5px 0;
+}
+#price-list h2 + hr {
+  border: 4px solid #09be94;
+  width: 330px;
+}
+/*frame not active start*/
+.frame {
+  position: relative;
+  height: 560px;
+  width: 365px;
+  border: 2px solid #cfcfcf;
+  padding: 25px;
+  z-index: 11;
+  float: left;
+  margin-top: 80px;
+  background-color: #fafafa;
+}
+.frame:nth-of-type(2){
+  margin-left: 36px;
+  margin-right: 36px;
+}
+.white-circle {
+  height: 60px;
+  width: 60px;
+  border: 2px solid #cfcfcf;
+  border-radius: 50%;
+  z-index: 12;
+  position: absolute;
+  top: -43px;
+  left: 50%;
+  right: 50%;
+  margin-left: -30px;
+  background-color: #fafafa;
+}
+.grey-circle {
+  height: 30px;
+  width: 30px;
+  border: 2px solid #cfcfcf;
+  border-radius: 50%;
+  z-index: 13;
+  background-color: #cfcfcf;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  top: 50%;
+  bottom: 50%;
+  margin-left: -15px;
+  margin-top: -15px;
+}
+.frame h3 {
+  text-transform: uppercase;
+  font-size: 26px;
+  text-align: center;
+  color: #09be94;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+.price {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid #cfcfcf;
+  margin: 0 auto;
+  padding-top: 35px;
+  background-color: white;
+}
+.price p {
+  color: #bfbfbf;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.price p:first-child {
+  font-size: 46px;
+  margin-bottom: 2px;
+}
+.price p sup {
+  font-size: 14px;
+}
+.price p span {
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 14px;
+}
+table {
+  margin-top: 40px;
+  width: 361px;
+  border-collapse: collapse;
+  line-height: 50px;
+  font-size: 24px;
+  color: #a6a6a6;
+  text-align: center;
+  position: absolute;
+  left: 0;
+}
+table tr:nth-child(odd){
+  background-color: #dbdbdb;
+}
+table tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+.button-join {
+  height: 36px;
+  width: 140px;
+  font-size: 16px;
+  text-align: center;
+  line-height: 36px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  right: 50%;
+  margin-left: -70px;
+  font-weight: bold;
+}
+/*frame-active start*/
+.frame.frame-active {
+  border: 2px solid #09be94;/*inny kolor*/
+  background-color: #09be94; /*inny kolor*/
+}
+.frame.frame-active .white-circle {
+  border: 2px solid #09be94; /*inny kolor*/
+  background-color: #09be94; /*inny kolor*/
+}
+.frame.frame-active .grey-circle {
+  border: 2px solid white; /*inny kolor*/
+  background-color: white; /*inny kolor*/
+}
+.frame.frame-active h3 {
+  color: white; /*inny kolor*/
+}
+.frame.frame-active .price {
+  border: 2px solid #09be94; /*inny kolor*/
+}
+.frame.frame-active .price p {
+  color: #09be94; /*inny kolor*/
+}
+.frame.frame-active table tr:nth-child(odd){
+  background-color: #fafafa; /*inny kolor*/
+}
+.frame.frame-active .button-join {
+  color: #09be94; /*inny kolor*/
+  background-color: white; /*inny kolor*/
 }
 #contact {
   height: 450px;
