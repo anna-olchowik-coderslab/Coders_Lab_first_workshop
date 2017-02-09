@@ -97,6 +97,9 @@ header {
   float: left;
   width: 200px;
 }
+.main-menu {
+  float: right;
+}
 .logo, .main-menu {
   color: white;
   text-transform: uppercase;
@@ -143,12 +146,12 @@ header {
 }
 #carrousel {
   background-color: lightgrey; /*add gradient here*/
-  height: 500px;
+  height: 580px;
 }
 .arrow { /*wrzucić ładniejsze strzałki*/
   width: 60px;
-  margin-top: 90px;
-  font-size: 100px;
+  margin-top: 100px;
+  font-size: 120px;
   font-weight: 300;
   color: #09be94;
 }
@@ -159,43 +162,50 @@ header {
   float: right;
   text-align: right;
 }
-.black-chair {
-  width: auto;
-  height: 400px;
+.black-chair { /*dalej powód dla którego w końcu ustawiłam go jako tło --> ten obrazek ma za dużo tła po bokach - czy muszę go wycinać, żeby się wszystko pomieściło tak jak w layoucie? Jest cały czas za mały, ale na stronie zajmuje za dużo miejsca (strzałka po lewej i tekst po prawej muszą być bliżej). To tło jest przezroczyste - czy mam go wrzucić w jakiejś innej warstwie? Ale jak? jako pseudoelement?*/
+  width: 480px;
+  height: 490px;
   margin-top: 0;
   float: left;
+  background-image: url("../images/black_chair.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
 }
 .main-text {
   float: left;
-  width: 400px;
-  margin-top: 60px;
+  width: 450px;
+  margin-top: 80px;
+  margin-left: 30px;
   text-align: center;
 }
 h1 {
   text-transform: uppercase;
-  font-size: 36px;
-  margin-bottom: 25px;
+  font-size: 40px;
+  margin-bottom: 36px;
 }
 h1 span {
   color: #09be94;
   font-family: 'Raleway Bold', Arial, sans-serif;
-  font-size: 38px;
+  font-size: 42px;
 }
 .info-text {
   font-size: 16px;
-  line-height: 22px;
-  margin-bottom: 30px;
+  line-height: 24px;
+  margin-bottom: 35px;
+  letter-spacing: 1px;
 }
 .button {
   border-radius: 10px;
   background-color: #09be94;
   text-transform: uppercase;
   color: white;
+  text-align: center;
 }
 .see-more-button {
-  width: 220px;
+  width: 260px;
   height: 50px;
-  font-size: 22px;
+  font-size: 24px;
   line-height: 50px;
   margin: 0 auto;
 }
@@ -272,12 +282,14 @@ hr {
   background-color: #f2f2f2;
   height: 800px;
 }
-#price-list h2 {
+#price-list h2,  #contact h2 {
   text-transform: uppercase;
   font-size: 22px;
   padding: 50px 0 5px 0;
+  color: #4d4d4d;
+  letter-spacing: 1px;
 }
-#price-list h2 + hr {
+#price-list h2 + hr, #contact h2 + hr {
   border: 4px solid #09be94;
   width: 330px;
 }
@@ -381,7 +393,6 @@ table tr:nth-child(even){
   height: 36px;
   width: 140px;
   font-size: 16px;
-  text-align: center;
   line-height: 36px;
   position: absolute;
   bottom: 20px;
@@ -420,7 +431,102 @@ table tr:nth-child(even){
   background-color: white; /*inny kolor*/
 }
 #contact {
-  height: 450px;
+  height: 600px;
+}
+.contact-left {
+  width: 750px;
+  float: left;
+}
+.input {
+  width: 725px;
+  border: 1px solid #09be94; /*zrobić jaśniejszą ramkę*/
+}
+.input-text {
+  height: 60px;
+  font-size: 26px;
+  font-family: 'Raleway Regular', Arial, sans-serif;
+  /*jak mam sformatować tekst wpisywany, nie formatując jednocześnie placeholdera????
+  chodzi mi o padding*/
+}
+#name {
+  margin-top: 50px;
+}
+#email {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.input-textarea {
+  height: 220px;
+  resize: none;
+  font-size: 26px;
+  font-family: 'Raleway Regular', Arial, sans-serif;
+  /*wygląda na to, że ustawienie line-height w placeholderze ustawiło mi line-height też podczas wpisywania tekstu :(*/
+}
+
+/*code to style placeholders from http://stackoverflow.com/questions/2610497/change-an-html5-inputs-placeholder-color-with-css*/
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  font-size: 26px;
+  padding-left: 15px;
+  line-height: 60px;
+  font-family: 'Raleway Regular', Arial, sans-serif;
+  color: #bdbdbd;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  font-size: 26px;
+  padding-left: 15px;
+  line-height: 60px;
+  font-family: 'Raleway Regular', Arial, sans-serif;
+  color: #bdbdbd;
+  opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  font-size: 26px;
+  padding-left: 15px;
+  line-height: 60px;
+  font-family: 'Raleway Regular', Arial, sans-serif;
+  color: #bdbdbd;
+  opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  font-size: 26px;
+  padding-left: 15px;
+  line-height: 60px;
+  font-family: 'Raleway Regular', Arial, sans-serif;
+  color: #bdbdbd;
+}
+.contact-right {
+  width: 380px;
+  float: right;
+}
+.red-chair {
+  width: 300px;
+  margin: 20px 0 30px 15px;
+}
+.data-accept {
+  margin-bottom: 24px;
+}
+.data-accept p {
+  float: left;
+  width: 300px;
+  color: lightgrey;
+  font-size: 20px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.form-ok {
+  float: left;
+  border: 1px solid #09be94; /*jak to się stanie inputem to border będzie tu niepotrzebny*/
+  padding: 5px 1px 5px 1px;
+}
+/*jak zresetować defaultowe ostylowanie formularzy? jak zmienię to na i<input type="submit"> to się włącza shadow itp, a będę musiała to zrobić!*/
+.button-send {
+  width: 350px;
+  height: 70px; /*czemu nie działa wysokość?*/
+  font-size: 22px;
+  line-height: 70px;
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: 1px;
 }
 footer {
   height: 60px;
