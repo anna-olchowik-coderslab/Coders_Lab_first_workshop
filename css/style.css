@@ -508,9 +508,9 @@ table tr:nth-child(even){
 .data-accept p {
   float: left;
   width: 300px;
-  color: lightgrey;
-  font-size: 20px;
-  margin-top: 5px;
+  color: #bdbdbd;
+  font-size: 21px;
+  margin-top: 3px;
   margin-left: 10px;
 }
 .form-ok {
@@ -530,4 +530,29 @@ table tr:nth-child(even){
 }
 footer {
   height: 60px;
+  letter-spacing: 2px;
+}
+#copyright {
+  text-transform: capitalize;
+  font-size: 16px;
+  float: left;
+  width: 785px;
+  font-weight: 700;
+  padding-top: 16px;
+  color: #b2b2b2;
+}
+#icons {
+  float: left;
+}
+#footer-logo {
+  float: right;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 700;
+  padding-top: 10px;
+  color: #a2a2a2;
+}
+#footer-logo span {
+  font-family: 'Raleway Bold', Arial, sans-serif;
+  font-size: 22px;
 }
