@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Sit on our chair</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <script src="js/main.js"></script>
     <meta name="description" content="Meet producent of the best chairs in the world."/>
 </head>
 <body>
@@ -13,31 +14,30 @@
         <p class="logo">
           Sit <span>on</span> chair
         </p>
-        <nav> <!--dlaczego jak dodam tu clearfix to wszystko się psuje?? przecież powinien być! bo main-menu ma ustawiony float-->
+        <nav>
             <ul class="main-menu clearfix">
               <li>
-                Kontakt
+                O firmie
+                <!-- tu jest zagnieżdzone hover-menu -->
+                <ul class="hover-menu">
+                  <li>
+                    Aktualności
+                  </li>
+                  <li>
+                    Nasz team
+                  </li>
+                  <li>
+                    Historia
+                  </li>
+                </ul>
               </li>
               <li>
                 Galeria
               </li>
               <li>
-                O firmie
+                Kontakt
               </li>
             </ul>
-          <div class="clearfix">
-            <ul class="hover-menu">
-              <li>
-                Aktualności
-              </li>
-              <li>
-                Nasz team
-              </li>
-              <li>
-                Historia
-              </li>
-            </ul>
-          </div>
         </nav>
       </div>
     </header>
@@ -47,7 +47,14 @@
       <p class="arrow left-arrow">
         &lsaquo;
       </p>
-      <div class="black-chair">
+      <div class="slider">
+        <!-- nie rozumiem dlaczego ten div wypływa jakby na samą górę sekcji i ma 19px wysokości. cała reszta zawartości sekcji jest o te 19px obniżona. tak samo jest z wcześniejszym divem o klasach "container clearfix". Byłoby super gdybyśmy mogły o tym jakoś porozmawiać. -->
+        <!-- przy klikaniu na strzałki pojawia się dziwne podświetlenie elementów na niebiesko (przy prawej tylko strzałki, przy lewej strzałki i obrazków). Skąd to się bierze, jak to zlikwidować? starałam się zrobić tak, żeby strzałka i obrazek na siebie nie nachodziły, ale to nie pomaga-->
+        <ul>
+            <li><img src="images/black_chair.png" class="image"></li>
+            <li><img src="images/red.png" class="image"></li>
+            <li><img src="images/orange.png" class="image"></li>
+        </ul>
       </div>
       <div class="main-text">
       <h1>Sit <span>on</span> our <span>chair</span></h1>
@@ -187,28 +194,19 @@
       <h2>Kontakt</h2>
       <hr>
       <div class="contact contact-left">
-        <form>
-          <input type="text" name="name-surname" id="name" placeholder="Imię" class="input input-text"><br>
-          <input type="text" name="email" id="email" placeholder="email" class="input input-text"><br>
-          <textarea name="message" id="message" placeholder="Wiadomość" class="input input-textarea"></textarea>
+        <form id="contact-form">
+          <input type="text" name="name-surname" id="name" placeholder="Imię" class="input-text"><br>
+          <input type="text" name="email" id="email" placeholder="email" class="input-text"><br>
+          <textarea name="message" id="message" placeholder="Wiadomość" class="input-textarea"></textarea>
         </form>
       </div>
       <div class="contact contact-right">
         <img src="images/red_chair.png" class="red-chair">
         <div class="data-accept clearfix">
-          <!-- <input type="checkbox" value="data-accept" class="input checkbox"> -->
-          <!-- będzie trzeba zrobić z tego input pewnie ale jak wtedy wrzucić ten obrazek?
-          jako tło nie działa -->
-            <img src="images/form_ok.jpg" class="form-ok">
-          <!-- </input> -->
-          <p>Zgadzam się na przetwarzanie danych osobowych
-          </p>
+          <input type="checkbox" value="data-accept" id="agree">
+          <label for="agree">Zgadzam się na przetwarzanie danych osobowych</label>
         </div>
-        <div class="button button-send">
-          <!-- można nadać mu atrybut form, wtedy nie musi być wewnątrz tagu form
-          oczywiście trzeba zmienić go na input type="submit" -->
-          Wyślij
-        </div>
+        <input type="submit" value="Wyślij" class="button button-send" form="contact-form">
       </div>
     </div>
   </section>

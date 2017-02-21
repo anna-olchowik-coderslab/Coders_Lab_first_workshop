@@ -5,10 +5,9 @@
   box-sizing: border-box;
   list-style-type: none;
 }
-/*add font*/
+/*add fonts*/
 @font-face {
-	font-family: 'Raleway Regular'; /*jak to działa z używaniem różnych czcionek? mam dać im tu inne font-family czy co??*/
-  /*dlaczego mi to nie działa????*/
+	font-family: 'Raleway Regular';
 	src: local('../fonts/Raleway-Regular'),
 		url('../fonts/Raleway-Regular.woff2') format('woff2'),
 		url('../fonts/Raleway-Regular.woff') format('woff');
@@ -78,110 +77,129 @@
   content: "";
   display: table;
 }
-/*main css*/
+/*main styles*/
 body {
   font-family: 'Raleway Regular', Arial, sans-serif;
 }
 section {
   width: 100%;
 }
-header {
-  background-color: black;
-  height: 40px;
-}
 .container {
   width: 1170px;
   margin: 0 auto;
 }
+header {
+  background-color: black;
+  height: 40px;
+}
 .logo {
   float: left;
   width: 200px;
-}
-.main-menu {
-  float: right;
-}
-.logo, .main-menu {
-  color: white;
-  text-transform: uppercase;
-  font-size: 14px;
-  line-height: 40px;
-  letter-spacing: 2px;
 }
 .logo span {
   color: #09be94;
   font-family: 'Raleway Black', Arial, sans-serif;
   font-size: 15px;
 }
-.main-menu > li{
+.logo, .main-menu > li {
+  color: white;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 40px;
+  letter-spacing: 2px;
+}
+nav {
   float: right;
+  position: relative;
+}
+.main-menu > li{
+  float: left;
   margin-left: 25px;
   margin-right: 25px;
   font-weight: 600;
 }
-.main-menu > li:first-of-type {
+.main-menu > li:last-of-type {
   margin-right: 0;
 }
-.hover-menu > li:first-of-type::before {
-  content: "";
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  top: -5px;
-  left: 40px;
-  transform: rotate(45deg);
-  border-top: 10px solid black;
-  border-left: 10px solid black;
-}
-.hover-menu { /*słabo bo to zwiększa wysokość diva, i przez to kolejną sekcję mam zbyt oddaloną ku dołowi - co można z tym zrobić? jak mi się uda to zmienić, to muszę zwiększyć black chair i napisy w tej sekcji, i zwiększyć marginesy od góry*/
-  /*visibility: hidden;*/
+.hover-menu {
+  visibility: hidden;
   background-color: black;
   margin-top: 15px;
   margin-right: 200px;
   padding: 5px 25px 5px 15px;
-  position: relative;
-  float: right;
-  color: white;
+  position: absolute;
+}
+.hover-menu li {
   line-height: 30px;
-  font-size: 14px;
+  font-size: 16px;
+  text-transform: none;
+  letter-spacing: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+/*dzióbek na górze hover-menu*/
+.hover-menu > li:first-of-type::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: -5px;
+  left: 40px;
+  transform: rotate(45deg);
+  border-top: 5px solid black;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid black;
 }
 #carrousel {
-  background-color: lightgrey; /*add gradient here*/
+  background-color: lightgrey;
+  background: -webkit-linear-gradient(bottom, lightgrey, white);
+  background: -o-linear-gradient(bottom, lightgrey, white);
+  background: -moz-linear-gradient(bottom, lightgrey, white);
+  background: linear-gradient(bottom, lightgrey, white);
   height: 580px;
 }
-.arrow { /*wrzucić ładniejsze strzałki*/
-  width: 60px;
-  margin-top: 100px;
-  font-size: 120px;
-  font-weight: 300;
+.arrow {
+  margin-top: 200px;
+  font-size: 130px;
+  font-family: 'Raleway Light', Arial, sans-serif;;
+  font-weight: lighter;
   color: #09be94;
+  position: absolute;
 }
 .left-arrow {
-  float: left;
+  /*to tylko po to, żeby strzałka i img na siebie nie nachodziły bo nie chcę żeby się podświetlał obrazek przy klikaniu na strzałkę*/
+  width: 30px;
 }
 .right-arrow {
-  float: right;
+  left: 1180px;
   text-align: right;
 }
-.black-chair { /*dalej powód dla którego w końcu ustawiłam go jako tło --> ten obrazek ma za dużo tła po bokach - czy muszę go wycinać, żeby się wszystko pomieściło tak jak w layoucie? Jest cały czas za mały, ale na stronie zajmuje za dużo miejsca (strzałka po lewej i tekst po prawej muszą być bliżej). To tło jest przezroczyste - czy mam go wrzucić w jakiejś innej warstwie? Ale jak? jako pseudoelement?*/
-  width: 480px;
-  height: 490px;
-  margin-top: 0;
-  float: left;
-  background-image: url("../images/black_chair.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
+.slider ul{
+    list-style: none;
+}
+.slider li{
+    display: none;
+}
+.slider .visible{
+    display: inline-block;
+}
+.image {
+  width: 600px;
+  height: auto;
+  margin-top: 70px;
+  position: absolute;
+  left: 100px;
 }
 .main-text {
-  float: left;
   width: 450px;
-  margin-top: 80px;
-  margin-left: 30px;
+  margin-top: 150px;
+  position: absolute;
+  left: 660px;
   text-align: center;
 }
 h1 {
   text-transform: uppercase;
-  font-size: 40px;
+  font-size: 41px;
   margin-bottom: 36px;
 }
 h1 span {
@@ -212,7 +230,7 @@ h1 span {
 #content {
   height: 400px;
 }
-.box-img { /*czym jest ten margines od góry i od dołu w zewnętrznym divie?? skąd on się bierze??*/
+.box-img {
   width: 365px;
   height: 250px;
   float: left;
@@ -229,10 +247,8 @@ h1 span {
   margin-right: 36px;
 }
 .white-belt {
-  width: 355px;
   height: 80px;
   margin-top: 150px;
-  float: right;
   background-color: rgb(255, 255, 255);
   background-color: rgba(255, 255, 255, 0.57);
 }
@@ -240,13 +256,13 @@ h1 span {
   font-size: 18px;
   font-weight: bold;
   letter-spacing: 1px;
-  margin-top: 20px;
-  margin-left: 15px;
+  padding-top: 20px;
+  padding-left: 15px;
 }
 .white-belt span {
   text-transform: uppercase;
 }
-.green-line { /*tu chyba można skrócić kod - sprawdzić*/
+.green-line {
   width: 170px;
   margin-left: 15px;
 }
@@ -258,7 +274,7 @@ hr {
   height: 280px;
   float: left;
   margin-top: 20px;
-  border: 2px solid #e0e0e0; /*to chyba jednak jest shadow - poprawić*/
+  border: 2px solid #e0e0e0;
 }
 .finds-all-inputs p {
   color: grey;
@@ -293,6 +309,7 @@ hr {
   border: 4px solid #09be94;
   width: 330px;
 }
+/*tu zrobiłam wersję active i not active bo myślałam że będą miały zmieniać style przy klikaniu w nie*/
 /*frame not active start*/
 .frame {
   position: relative;
@@ -403,32 +420,32 @@ table tr:nth-child(even){
 }
 /*frame-active start*/
 .frame.frame-active {
-  border: 2px solid #09be94;/*inny kolor*/
-  background-color: #09be94; /*inny kolor*/
+  border: 2px solid #09be94;
+  background-color: #09be94;
 }
 .frame.frame-active .white-circle {
-  border: 2px solid #09be94; /*inny kolor*/
-  background-color: #09be94; /*inny kolor*/
+  border: 2px solid #09be94;
+  background-color: #09be94;
 }
 .frame.frame-active .grey-circle {
-  border: 2px solid white; /*inny kolor*/
-  background-color: white; /*inny kolor*/
+  border: 2px solid white;
+  background-color: white;
 }
 .frame.frame-active h3 {
-  color: white; /*inny kolor*/
+  color: white;
 }
 .frame.frame-active .price {
-  border: 2px solid #09be94; /*inny kolor*/
+  border: 2px solid #09be94;
 }
 .frame.frame-active .price p {
-  color: #09be94; /*inny kolor*/
+  color: #09be94;
 }
 .frame.frame-active table tr:nth-child(odd){
-  background-color: #fafafa; /*inny kolor*/
+  background-color: #fafafa;
 }
 .frame.frame-active .button-join {
-  color: #09be94; /*inny kolor*/
-  background-color: white; /*inny kolor*/
+  color: #09be94;
+  background-color: white;
 }
 #contact {
   height: 600px;
@@ -437,16 +454,15 @@ table tr:nth-child(even){
   width: 750px;
   float: left;
 }
-.input {
+input, textarea {
   width: 725px;
-  border: 1px solid #09be94; /*zrobić jaśniejszą ramkę*/
+  border: 1px solid #26f2c3;
 }
 .input-text {
   height: 60px;
   font-size: 26px;
   font-family: 'Raleway Regular', Arial, sans-serif;
-  /*jak mam sformatować tekst wpisywany, nie formatując jednocześnie placeholdera????
-  chodzi mi o padding*/
+  padding-left: 15px;
 }
 #name {
   margin-top: 50px;
@@ -456,24 +472,25 @@ table tr:nth-child(even){
   margin-bottom: 25px;
 }
 .input-textarea {
-  height: 220px;
+  height: 235px;
   resize: none;
   font-size: 26px;
   font-family: 'Raleway Regular', Arial, sans-serif;
-  /*wygląda na to, że ustawienie line-height w placeholderze ustawiło mi line-height też podczas wpisywania tekstu :(*/
+  padding-left: 15px;
+  /*padding-top: 20px; nie wiem jak zrobić padding top dla tekstu nie przesuwając jednocześnie placeholdera, tj nadpisać tych stylów dla placeholderów poniżej, ale tylko dla textarea*/
+  /*gdzie mogę w przeglądarce sprawdzić style placeholderów?*/
 }
-
 /*code to style placeholders from http://stackoverflow.com/questions/2610497/change-an-html5-inputs-placeholder-color-with-css*/
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
   font-size: 26px;
-  padding-left: 15px;
+  /*padding-left: 15px;*/
   line-height: 60px;
   font-family: 'Raleway Regular', Arial, sans-serif;
   color: #bdbdbd;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
   font-size: 26px;
-  padding-left: 15px;
+  /*padding-left: 15px;*/
   line-height: 60px;
   font-family: 'Raleway Regular', Arial, sans-serif;
   color: #bdbdbd;
@@ -481,7 +498,7 @@ table tr:nth-child(even){
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
   font-size: 26px;
-  padding-left: 15px;
+  /*padding-left: 15px;*/
   line-height: 60px;
   font-family: 'Raleway Regular', Arial, sans-serif;
   color: #bdbdbd;
@@ -489,7 +506,7 @@ table tr:nth-child(even){
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
   font-size: 26px;
-  padding-left: 15px;
+  /*padding-left: 15px;*/
   line-height: 60px;
   font-family: 'Raleway Regular', Arial, sans-serif;
   color: #bdbdbd;
@@ -503,30 +520,53 @@ table tr:nth-child(even){
   margin: 20px 0 30px 15px;
 }
 .data-accept {
-  margin-bottom: 24px;
+  height: 55px;
+  margin-bottom: 37px;
 }
-.data-accept p {
+#agree {
+  float: left;
+  width: 50px;
+  height: 50px;
+}
+.data-accept label {
   float: left;
   width: 300px;
   color: #bdbdbd;
-  font-size: 21px;
+  font-size: 20px;
   margin-top: 3px;
-  margin-left: 10px;
+  margin-left: 15px;
+  position: relative;
 }
-.form-ok {
-  float: left;
-  border: 1px solid #09be94; /*jak to się stanie inputem to border będzie tu niepotrzebny*/
-  padding: 5px 1px 5px 1px;
+#agree::before, #agree::after {
+      border: 1px solid #26f2c3;
+      content: "";
+      display: block;
+      left: 848;
+      height: 50px;
+      position: absolute;
+      width: 50px;
+      top: 2207;
 }
-/*jak zresetować defaultowe ostylowanie formularzy? jak zmienię to na i<input type="submit"> to się włącza shadow itp, a będę musiała to zrobić!*/
+#agree::before {
+      background-color: white;
+}
+#agree::after {
+      background: url('../images/form_ok.jpg') no-repeat center;
+      border: 0;
+      display: none;
+}
+#agree:checked::after {
+    display: block;
+  }
 .button-send {
   width: 350px;
-  height: 70px; /*czemu nie działa wysokość?*/
-  font-size: 22px;
+  height: 70px;
   line-height: 70px;
   font-size: 36px;
   font-weight: 900;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  font-family: 'Raleway Regular', Arial, sans-serif;
+  border-width: 0; /*reset ustawień przeglądarki*/
 }
 footer {
   height: 60px;
